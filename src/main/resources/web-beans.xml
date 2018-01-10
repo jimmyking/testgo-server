@@ -29,7 +29,9 @@
         <property name="fileEncoding" value="utf-8"/>
     </bean>
 
-    
+    <context:annotation-config/>
+    <context:component-scan base-package="com.jimmyking.testgo.dao.impl,com.jimmyking.testgo.service.biz"/>
+
 
     <bean id="testgoDs" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <property name="minEvictableIdleTimeMillis" value="600000"/>
