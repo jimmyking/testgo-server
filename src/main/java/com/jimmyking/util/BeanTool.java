@@ -7,7 +7,7 @@ import java.util.List;
 
 public class BeanTool{
 
-  public static List<Field> getStaticFields(Class cls) {
+  public static <T> List<Field> getStaticFields(Class<T> cls) {
     List<Field> fields = new ArrayList<>();
     Field[] declaredFields = cls.getDeclaredFields();
     for (Field f : declaredFields) {
@@ -20,7 +20,7 @@ public class BeanTool{
 }
 
 
-public static List<Field> getInstanceFields(Class cls) {
+public static  <T> List<Field> getInstanceFields(Class<T> cls) {
     List<Field> fields = new ArrayList<>();
     Field[] declaredFields = cls.getDeclaredFields();
     for (Field f : declaredFields) {
