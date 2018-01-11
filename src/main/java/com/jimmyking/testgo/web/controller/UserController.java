@@ -16,10 +16,17 @@ public class UserController{
     @Autowired
     private UserApi userApi;
 
-    @RequestMapping("register")
+    @RequestMapping("signup")
     @ResponseBody
-    public ResponseInfo<Integer> register(UserModel userModel){
+    public ResponseInfo<Integer> signup(UserModel userModel){
         int id =userApi.insertUser(userModel);
         return ResponseInfo.success(id);
+    }
+
+    @RequestMapping("signin")
+    @ResponseBody
+    public ResponseInfo<UserModel> signin(String name,String password){
+        UserModel userModel = userApi.login(name, password);
+        return ResponseInfo.success(userModel);
     }
 }
