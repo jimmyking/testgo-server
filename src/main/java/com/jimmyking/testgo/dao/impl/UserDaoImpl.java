@@ -15,6 +15,7 @@ public class UserDaoImpl implements UserDao{
 
   @Override
   public int insertUser(UserDo userDo){
-    return userMapper.insertUser(userDo);
+    userMapper.insertUser(userDo);
+    return userDo.getId().intValue();
   }
 }

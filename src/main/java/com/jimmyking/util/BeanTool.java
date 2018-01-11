@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BeanTool{
+
   public static List<Field> getStaticFields(Class cls) {
     List<Field> fields = new ArrayList<>();
     Field[] declaredFields = cls.getDeclaredFields();

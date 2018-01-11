@@ -11,6 +11,6 @@ public interface UserMapper{
 
   @Lang(InsertParamsDoDriver.class)
   @Insert("insert into user")
-  @Options(useGeneratedKeys = true, keyProperty = "id")
+  @Options(useGeneratedKeys = true,keyProperty = "id", keyColumn = "id")
   int insertUser(UserDo userDo);
 }

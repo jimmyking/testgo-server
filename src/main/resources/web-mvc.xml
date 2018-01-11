@@ -14,5 +14,24 @@
     <mvc:default-servlet-handler/>
 
     <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean id="converter" class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+                <property name="charset" value="UTF-8"/>
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json</value>
+                        <value>text/html;charset=UTF-8</value>
+                    </list>
+                </property>
+                <property name="features">
+                    <list>
+                        <value>WriteMapNullValue</value>
+                        <value>QuoteFieldNames</value>
+                        <value>WriteEnumUsingToString</value>
+                        <value>DisableCircularReferenceDetect</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
     </mvc:annotation-driven>
 </beans>
