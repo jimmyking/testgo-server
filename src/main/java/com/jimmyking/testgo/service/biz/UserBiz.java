@@ -3,7 +3,6 @@ package com.jimmyking.testgo.service.biz;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Assert;
 import org.springframework.util.CollectionUtils;
 
 import com.jimmyking.testgo.dao.face.UserDao;
