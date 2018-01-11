@@ -29,7 +29,7 @@ public class ProjectController{
 
   @RequestMapping("add")
   @ResponseBody
-  public ResponseInfo<Integer> add(@RequestBody ProjectModel projectModel){
+  public ResponseInfo<Integer> add(ProjectModel projectModel){
     LogFactory.getLog(getClass()).debug("projectMode=="+projectModel.getName());
     int id = projectApi.insertProject(projectModel);
     return ResponseInfo.success(id);
@@ -47,5 +47,12 @@ public class ProjectController{
   public ResponseInfo<String> delete(Long pId){
     projectApi.deleteProject(pId);
     return ResponseInfo.success("");
+  }
+
+  @RequestMapping("find")
+  @ResponseBody
+  public ResponseInfo<ProjectModel> find(Long pId){
+    ProjectModel projectModel = projectApi.findById(pId);
+    return ResponseInfo.success(projectModel);
   }
 }

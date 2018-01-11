@@ -14,4 +14,6 @@ public interface ProjectApi{
 
   List<ProjectModel> queryProjectByUserId(Long userId);
 
+  ProjectModel findById(Long id);
+
 }

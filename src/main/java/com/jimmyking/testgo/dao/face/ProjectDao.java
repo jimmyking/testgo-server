@@ -13,4 +13,6 @@ public interface ProjectDao {
   int deleteProject(Long id);
 
   List<ProjectDo> queryProjectByUserId(Long userId);
+
+  ProjectDo findById(Long id);
 }

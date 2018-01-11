@@ -40,4 +40,9 @@ public class ProjectDaoImpl implements ProjectDao{
 		return projectMapper.deleteProject(id);
 	}
 
+	@Override
+	public ProjectDo findById(Long id) {
+		return projectMapper.findById(id);
+	}
+
 }

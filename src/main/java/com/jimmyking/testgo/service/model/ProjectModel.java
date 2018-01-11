@@ -2,6 +2,8 @@ package com.jimmyking.testgo.service.model;
 
 import java.util.Date;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 public class ProjectModel{
   
   private Long id;
@@ -10,6 +12,7 @@ public class ProjectModel{
 
   private String name;
 
+  @JSONField(format="yyyy-MM-dd")
   private Date createDate;
   
   /**

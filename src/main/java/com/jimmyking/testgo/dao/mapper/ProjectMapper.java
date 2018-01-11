@@ -29,5 +29,8 @@ public interface ProjectMapper{
   @Select("select * from project where user_id = #{userId}")
   List<ProjectDo> queryProjectByUserId(@Param("userId") Long userId);
 
+  @Select("select * from project where id = #{id}")
+  ProjectDo findById(@Param("id") Long id);
+
 
 }

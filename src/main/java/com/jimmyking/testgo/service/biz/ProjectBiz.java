@@ -38,4 +38,10 @@ public class ProjectBiz implements ProjectApi{
     return ConvertTool.convertToList(doList, ProjectModel.class);
 	}
 
+	@Override
+	public ProjectModel findById(Long id) {
+		ProjectDo projectDo = projectDao.findById(id);
+		return ConvertTool.convertToBean(projectDo, ProjectModel.class);
+	}
+
 }
