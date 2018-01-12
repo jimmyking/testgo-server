@@ -29,4 +29,11 @@ public class UserController{
         UserModel userModel = userApi.login(name, password);
         return ResponseInfo.success(userModel);
     }
+
+    @RequestMapping("find")
+    @ResponseBody
+    public ResponseInfo<UserModel> find(Long uId){
+        UserModel userModel = userApi.findById(uId);
+        return ResponseInfo.success(userModel);
+    }
 }

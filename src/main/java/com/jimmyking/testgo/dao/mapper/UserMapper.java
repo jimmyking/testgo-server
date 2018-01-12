@@ -23,4 +23,7 @@ public interface UserMapper{
 
   @Select("select * from user where name = #{name}")
   List<UserDo> queryUserByName(@Param("name") String name);
+
+  @Select("select * from user where id = #{id} ")
+  UserDo findById(@Param("id") Long id);
 }

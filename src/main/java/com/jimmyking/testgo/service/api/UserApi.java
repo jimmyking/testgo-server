@@ -11,5 +11,7 @@ public interface UserApi{
   UserModel login(String name,String pw);
 
   List<UserModel> queryUserByName(String name);
+
+  UserModel findById(Long id);
   
 }

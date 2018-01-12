@@ -30,4 +30,9 @@ public class UserDaoImpl implements UserDao{
   public List<UserDo> queryUserByName(String name) {
     return userMapper.queryUserByName(name);
   }
+
+  @Override
+  public UserDo findById(Long id) {
+    return userMapper.findById(id);
+  }
 }

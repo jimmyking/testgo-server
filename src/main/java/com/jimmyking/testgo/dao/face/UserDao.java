@@ -11,4 +11,6 @@ public interface UserDao{
   UserDo findUserByNameAndPw(String name,String pw);
 
   List<UserDo> queryUserByName(String name);
+
+  UserDo findById(Long id);
 }

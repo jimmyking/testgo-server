@@ -44,4 +44,10 @@ public class UserBiz implements UserApi{
     return ConvertTool.convertToList(doList, UserModel.class);
   }
 
+  @Override
+  public UserModel findById(Long id) {
+    UserDo userDo = userDao.findById(id);
+    return ConvertTool.convertToBean(userDo, UserModel.class);
+  }
+
 }
