@@ -10,26 +10,26 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import com.jimmyking.testgo.dao.pojo.ModelDo;
+import com.jimmyking.testgo.dao.pojo.ModuleDo;
 import com.jimmyking.util.InsertParamsDoDriver;
 
-public interface ModelMapper{
+public interface ModuleMapper{
 
   @Lang(InsertParamsDoDriver.class)
-  @Insert("insert into model ")
+  @Insert("insert into module ")
   @Options(useGeneratedKeys = true,keyProperty = "id", keyColumn = "id")
-  int insertModel(ModelDo modelDo);
+  int insertModel(ModuleDo modelDo);
 
-  @Delete("delete from model where id = #{mId} ")
+  @Delete("delete from module where id = #{mId} ")
   int deleteModel(@Param("mId") Long mId);
 
-  @Update("update model set name = #{name},prefix = #{prefix} where id = #{id}")
-  int updateModel(ModelDo modelDo);
+  @Update("update module set name = #{name},prefix = #{prefix} where id = #{id}")
+  int updateModel(ModuleDo modelDo);
 
-  @Select("select * from model where project_id = #{pId} ")
-  List<ModelDo> queryModelByProjectId(@Param("pId") Long pId);
+  @Select("select * from module where project_id = #{pId} ")
+  List<ModuleDo> queryModelByProjectId(@Param("pId") Long pId);
 
-  @Select("select * from model where id = #{mId} ")
-  ModelDo findById(@Param("mId") Long mId);
+  @Select("select * from module where id = #{mId} ")
+  ModuleDo findById(@Param("mId") Long mId);
 
 }

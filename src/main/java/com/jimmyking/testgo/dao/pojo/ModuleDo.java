@@ -2,7 +2,7 @@ package com.jimmyking.testgo.dao.pojo;
 
 import java.util.Date;
 
-public class ModelDo{
+public class ModuleDo{
 
   private Long id;
 

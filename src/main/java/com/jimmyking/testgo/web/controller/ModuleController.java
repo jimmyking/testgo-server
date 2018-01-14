@@ -8,34 +8,34 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.jimmyking.testgo.service.api.ModelApi;
-import com.jimmyking.testgo.service.model.ModelModel;
+import com.jimmyking.testgo.service.api.ModuleApi;
+import com.jimmyking.testgo.service.model.ModuleModel;
 import com.jimmyking.testgo.web.vo.ResponseInfo;
 
 @Controller
-@RequestMapping("model")
-public class ModelController{
+@RequestMapping("module")
+public class ModuleController{
 
   @Autowired
-  private ModelApi modelApi;
+  private ModuleApi modelApi;
 
   @RequestMapping("queryByProjectId")
   @ResponseBody
-  public ResponseInfo<List<ModelModel>> queryByProjectId(Long pId){
-    List<ModelModel> modelList = modelApi.queryModelByProjectId(pId);
+  public ResponseInfo<List<ModuleModel>> queryByProjectId(Long pId){
+    List<ModuleModel> modelList = modelApi.queryModelByProjectId(pId);
     return ResponseInfo.success(modelList);
   }
 
   @RequestMapping("find")
   @ResponseBody
-  public ResponseInfo<ModelModel> find(Long mId){
-    ModelModel model = modelApi.findById(mId);
+  public ResponseInfo<ModuleModel> find(Long mId){
+    ModuleModel model = modelApi.findById(mId);
     return ResponseInfo.success(model);
   }
 
   @RequestMapping("add")
   @ResponseBody
-  public ResponseInfo<String> add(ModelModel model){
+  public ResponseInfo<String> add(ModuleModel model){
     LogFactory.getLog(getClass()).debug("name-----------------------------"+model.getName());
     int id = modelApi.insertModel(model);
     return ResponseInfo.success(Integer.toString(id));

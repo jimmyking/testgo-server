@@ -1,23 +1,23 @@
 package com.jimmyking.testgo.dao.impl;
 
-import com.jimmyking.testgo.dao.face.ModelDao;
-import com.jimmyking.testgo.dao.mapper.ModelMapper;
-import com.jimmyking.testgo.dao.pojo.ModelDo;
-
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.jimmyking.testgo.dao.face.ModuleDao;
+import com.jimmyking.testgo.dao.mapper.ModuleMapper;
+import com.jimmyking.testgo.dao.pojo.ModuleDo;
+
 @Component
-public class ModelDaoImpl implements ModelDao{
+public class ModuleDaoImpl implements ModuleDao{
 
   @Autowired
-  private ModelMapper modelMapper;
+  private ModuleMapper modelMapper;
 
 	@Override
-	public int insertModel(ModelDo modelDo) {
+	public int insertModel(ModuleDo modelDo) {
     modelDo.setCreateDate(new Date());
     modelMapper.insertModel(modelDo);
 		return modelDo.getId().intValue();
@@ -29,17 +29,17 @@ public class ModelDaoImpl implements ModelDao{
 	}
 
 	@Override
-	public int updateModel(ModelDo modelDo) {
+	public int updateModel(ModuleDo modelDo) {
 		return modelMapper.updateModel(modelDo);
 	}
 
 	@Override
-	public List<ModelDo> queryModelByProjectId(Long pId) {
+	public List<ModuleDo> queryModelByProjectId(Long pId) {
 		return modelMapper.queryModelByProjectId(pId);
 	}
 
 	@Override
-	public ModelDo findById(Long mId) {
+	public ModuleDo findById(Long mId) {
 		return modelMapper.findById(mId);
 	}
 

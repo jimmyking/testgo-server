@@ -2,7 +2,7 @@ package com.jimmyking.testgo.service.model;
 
 import java.util.Date;
 
-public class ModelModel{
+public class ModuleModel{
   private Long id;
 
   private Long userId;
